@@ -1,9 +1,9 @@
 from aana.sdk import AanaSDK
 
-from aana_app_project.configs.deployments import deployments
-from aana_app_project.configs.endpoints import endpoints
+from reco.configs.deployments import deployments
+from reco.configs.endpoints import endpoints
 
-aana_app = AanaSDK(name="aana_app_project")
+aana_app = AanaSDK(name="reco")
 
 for deployment in deployments:
     aana_app.register_deployment(**deployment)

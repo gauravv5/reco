@@ -3,7 +3,7 @@ version: '3.8'
 services:
   postgres:
     restart: always
-    container_name: aana_app_project_db
+    container_name: reco_db
     image: postgres
     command: postgres -c 'max_connections=1000'
     healthcheck:
@@ -27,9 +27,9 @@ services:
     volumes:
       - pg_data:/pgdata
     
-  aana_app_project_app:
+  reco_app:
     restart: always
-    container_name: aana_app_project_app
+    container_name: reco_app
     depends_on:
       postgres:
         condition: service_healthy
@@ -61,8 +61,8 @@ services:
 
 volumes:
   pg_data:
-    name: aana_app_project_postgres_data
+    name: reco_postgres_data
   app_data:
-    name: aana_app_project_app_data
+    name: reco_app_data
   hf_datasets_cache:
     name: hf_datasets_cache

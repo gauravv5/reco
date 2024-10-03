@@ -41,4 +41,4 @@ ENV PYTHONUNBUFFERED=1
 EXPOSE 8000
 
 # Run the app
-CMD ["poetry", "run", "aana", "deploy", "aana_app_project.app:aana_app", "--host", "0.0.0.0"]
+CMD ["poetry", "run", "aana", "deploy", "reco.app:aana_app", "--host", "0.0.0.0"]
